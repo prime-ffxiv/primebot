@@ -68,4 +68,8 @@ async def male_viera(ctx):
     time_delta = str(viera_date - datetime.datetime.now())
     await ctx.send("Bunny boi countdown: {}".format(time_delta))
 
+@client.command()
+async def rollout(ctx):
+    await ctx.send(file=discord.File('images/autobot.gif'))
+
 client.run(TOKEN)
