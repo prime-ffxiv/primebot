@@ -11,7 +11,6 @@ from discord.ext import tasks, commands
 import discord
 
 import ships
-import timers
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -62,5 +61,11 @@ async def add_airship(ctx, name: str, rank: int):
 async def list_ships(ctx):
     new_message = await ctx.send(str(client.ship_list))
     client.msg_list.append(new_message)
+
+@client.command()
+async def male_viera(ctx):
+    viera_date = datetime.datetime(2021,11,23,6)
+    time_delta = str(viera_date - datetime.datetime.now())
+    await ctx.send("Bunny boi countdown: {}".format(time_delta))
 
 client.run(TOKEN)
