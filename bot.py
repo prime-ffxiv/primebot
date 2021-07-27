@@ -72,4 +72,8 @@ async def male_viera(ctx):
 async def rollout(ctx):
     await ctx.send(file=discord.File('images/autobot.gif'))
 
+@client.command()
+async def chaos(ctx):
+    await ctx.send(file=discord.File('images/chaos.gif'))
+
 client.run(TOKEN)
